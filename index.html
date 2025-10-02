@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>esta preparada ?</title>
-    <link rel="stylesheet" href="style.cs">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            background-color: #ffcccc;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff3366;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #ff3366;
+            cursor: pointer;
+        }
+
+        #nao {
+            font-size: 24px;
+            color: #333;
+            background-color: #ffcccc;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="conteudo">
-        <h2>❤️ posso te da 1 milhao de beijos? ❤️</h2>
-        <button class="btn" onclick="sim()">SIM</button>
-        <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">NÃO</button>
+    <div class="container">
+        <h1>Um Pedido de Namoro Especial</h1>
+        <p>Olá amor ❤️,</p>
+        <p>Quero dizer que você ilumina minha vida como ninguém mais.</p>
+        <p>Você aceita namorar comigo?</p>
+        <p class="heart" onclick="mostrarResposta()">❤️</p>
+        <button id="nao" onmouseover="mudarPosicao()">Não</button>
+        <p id="resposta" style="display: none;"></p>
     </div>
+    <script>
+        function mostrarResposta() {
+            document.getElementById('resposta').style.display = 'block';
+            document.getElementById('resposta').innerHTML = 'Sim! Eu aceito, meu amor. ❤️';
+        }
+
+        function mudarPosicao() {
+            const buttonNao = document.getElementById('nao');
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            buttonNao.style.left = `${randomX}px`;
+            buttonNao.style.top = `${randomY}px`;
+        }
+    </script>
 </body>
-<style>
-     #conteudo {
-        background: #0b1aee;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        text-align: center;
-        font-family: sans-serif;
-    }
-    h2{
-        color: aliceblue;
-    }
-     .btn {
-        background: white;
-        color: rgb(3, 3, 3);
-        border: none;
-        padding: 10px;
-        width: 60px;
-        height: 60px;
-        border-radius: 5px;
-        
-    }
-</style>
-<script>
-    function sim() {
-        alert("Você aceitou! s2 :)");
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://music.youtube.com/watch?v=mgdHEWq5XJ0&list=OLAK5uy_mVjiCQdBwthIr9SO6aqeGJhZcL0d6I9Nc";
-    }
-
-    function desvia(btn) {
-        // btn declarado na função
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
-        console.log('opa, desviei...');
-    }
-
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-
-</script>
-
 </html>
