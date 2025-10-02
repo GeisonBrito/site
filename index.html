@@ -50,6 +50,11 @@
             document.getElementById('resposta').style.display = 'block';
             document.getElementById('resposta').innerHTML = 'Sim! Eu aceito, meu amor. ❤️';
         }
+        function sim() {
+        alert("Sim! Eu aceito, meu amor. ❤️)");
+        // redireciona para um URL após clicar no SIM
+        location.href = "https://music.youtube.com/watch?v=mgdHEWq5XJ0&list=OLAK5uy_mVjiCQdBwthIr9SO6aqeGJhZcL0d6I9Nc";
+        }
 
         function mudarPosicao() {
             const buttonNao = document.getElementById('nao');
@@ -58,11 +63,7 @@
             buttonNao.style.left = `${randomX}px`;
             buttonNao.style.top = `${randomY}px`;
         }
-        function sim() {
-        alert("Você aceitou! s2 :)");
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://music.youtube.com/watch?v=mgdHEWq5XJ0&list=OLAK5uy_mVjiCQdBwthIr9SO6aqeGJhZcL0d6I9Nc";
-    }
+        
     </script>
 </body>
 </html>
